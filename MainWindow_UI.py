@@ -57,9 +57,9 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Active, QPalette.ToolTipText, brush4)
         brush10 = QBrush(QColor(255, 255, 255, 128))
         brush10.setStyle(Qt.SolidPattern)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush10)
-# endif
+
         palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
         brush11 = QBrush(QColor(64, 64, 216, 255))
         brush11.setStyle(Qt.SolidPattern)
@@ -83,9 +83,9 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush4)
         brush13 = QBrush(QColor(0, 0, 0, 128))
         brush13.setStyle(Qt.SolidPattern)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush13)
-# endif
+
         palette.setBrush(QPalette.Disabled, QPalette.WindowText, brush12)
         palette.setBrush(QPalette.Disabled, QPalette.Button, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.Light, brush2)
@@ -105,9 +105,9 @@ class Ui_MainWindow(object):
         palette.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush9)
         palette.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush4)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush13)
-# endif
+
         MainWindow.setPalette(palette)
         MainWindow.setAcceptDrops(False)
         MainWindow.setAnimated(True)
@@ -384,9 +384,87 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menuMenu.menuAction())
         self.menuMenu.addAction(self.actionAbout_2)
 
-        self.retranslateUi(MainWindow)
+        self.changeUI(MainWindow)
 
         self.drawButton.setDefault(False)
 
         QMetaObject.connectSlotsByName(MainWindow)
-    # setupUi
+
+    def editUI(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate(
+            "MainWindow", u"Function Plotter", None))
+        self.actionAbout_2.setText(QCoreApplication.translate(
+            "MainWindow", u"Repository link", None))
+
+        self.actionAbout_2.setShortcut(
+            QCoreApplication.translate("MainWindow", u"Alt+R", None))
+
+        self.drawButton.setAccessibleName(
+            QCoreApplication.translate("MainWindow", u"drawButton", None))
+
+        self.drawButton.setText(
+            QCoreApplication.translate("MainWindow", u"Draw", None))
+
+        self.drawButton.setShortcut(
+            QCoreApplication.translate("MainWindow", u"Ctrl+S", None))
+
+        self.label.setText(QCoreApplication.translate(
+            "MainWindow", u"Function Plotter", None))
+        self.label_3.setText(QCoreApplication.translate(
+            "MainWindow", u"x :", None))
+        self.label_4.setText(QCoreApplication.translate(
+            "MainWindow", u"Start", None))
+
+        self.startSpinBox.setAccessibleName(
+            QCoreApplication.translate("MainWindow", u"startSpinBox", None))
+
+        self.label_8.setText(
+            QCoreApplication.translate("MainWindow", u":", None))
+        self.label_5.setText(QCoreApplication.translate(
+            "MainWindow", u"End", None))
+
+        self.endSpinBox.setAccessibleName(
+            QCoreApplication.translate("MainWindow", u"endSpinBox", None))
+
+        self.label_9.setText(
+            QCoreApplication.translate("MainWindow", u":", None))
+        self.label_7.setText(QCoreApplication.translate(
+            "MainWindow", u"# of points", None))
+
+        self.pointSpinBox.setAccessibleName(
+            QCoreApplication.translate("MainWindow", u"pointSpinBox", None))
+
+        self.functionTextBox.setAccessibleName(
+            QCoreApplication.translate("MainWindow", u"FunctionTextBox", None))
+
+        self.functionTextBox.setText(
+            QCoreApplication.translate("MainWindow", u"x", None))
+        self.functionTextBox.setPlaceholderText("")
+        self.label_2.setText(QCoreApplication.translate(
+            "MainWindow", u"y =", None))
+
+        self.errorText.setAccessibleName(
+            QCoreApplication.translate("MainWindow", u"errorText", None))
+
+        self.errorText.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                          "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                          "p, li { white-space: pre-wrap; }\n"
+                                                          "</style></head><body style=\" font-family:'OCR A Extended'; font-size:22pt; font-weight:400; font-style:normal;\">\n"
+                                                          "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+
+        self.creationLabel.setAccessibleName(
+            QCoreApplication.translate("MainWindow", u"fuctionLabel", None))
+
+        self.creationLabel.setText(QCoreApplication.translate(
+            "MainWindow", u"Created By Ahmed Saad", None))
+
+        self.functionDisplay.setAccessibleName(
+            QCoreApplication.translate("MainWindow", u"functionDisplay", None))
+
+        self.functionDisplay.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                                "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                                "p, li { white-space: pre-wrap; }\n"
+                                                                "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:600; font-style:normal;\">\n"
+                                                                "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Y= x</p></body></html>", None))
+        self.menuMenu.setTitle(QCoreApplication.translate(
+            "MainWindow", u"About", None))
