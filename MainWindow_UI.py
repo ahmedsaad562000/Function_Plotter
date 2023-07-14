@@ -384,7 +384,7 @@ class MainWindow_UI(object):
         self.menubar.addAction(self.menuMenu.menuAction())
         self.menuMenu.addAction(self.actionAbout_2)
 
-        self.changeUI(MainWindow)
+        self.editUI(MainWindow)
 
         self.drawButton.setDefault(False)
 
