@@ -34,10 +34,16 @@ class PlotWidget(PlotWidgetBaseClass):
                                               'color': 'b'})
         self.axes.plot(points, points, 'r')
 
-    def update_figure(self, x, y):
+    def update_figure(self, x, y, functionStr):
         # clear previous function
+        functionStr = functionStr.replace("*", "")
         self.axes.cla()
-        self.axes.set_ylabel('adadasda')
+        self.axes.grid(color='black', linestyle=':', linewidth=1)
+        self.axes.set_title(f'Y = ${functionStr}$', {'fontsize': 18,
+                                                     'color': 'b'})
+        self.axes.set_xlabel('x')
+        self.axes.set_ylabel('y')
+
         # plot the new function using the points given
-        self.axes.plot(x, y)
+        self.axes.plot(x, y, 'r')
         self.draw()

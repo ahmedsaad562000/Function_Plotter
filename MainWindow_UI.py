@@ -1,5 +1,3 @@
-
-
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
@@ -59,9 +57,9 @@ class MainWindow_UI(object):
         palette.setBrush(QPalette.Active, QPalette.ToolTipText, brush4)
         brush10 = QBrush(QColor(255, 255, 255, 128))
         brush10.setStyle(Qt.SolidPattern)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette.setBrush(QPalette.Active, QPalette.PlaceholderText, brush10)
-# endif
+
         palette.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
         brush11 = QBrush(QColor(64, 64, 216, 255))
         brush11.setStyle(Qt.SolidPattern)
@@ -85,9 +83,9 @@ class MainWindow_UI(object):
         palette.setBrush(QPalette.Inactive, QPalette.ToolTipText, brush4)
         brush13 = QBrush(QColor(0, 0, 0, 128))
         brush13.setStyle(Qt.SolidPattern)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush13)
-# endif
+
         palette.setBrush(QPalette.Disabled, QPalette.WindowText, brush12)
         palette.setBrush(QPalette.Disabled, QPalette.Button, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.Light, brush2)
@@ -107,9 +105,9 @@ class MainWindow_UI(object):
         palette.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush9)
         palette.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush4)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush13)
-# endif
+
         MainWindow.setPalette(palette)
         MainWindow.setAcceptDrops(False)
         MainWindow.setAnimated(True)
@@ -166,7 +164,7 @@ class MainWindow_UI(object):
         self.functionTextBox.setSizeIncrement(QSize(6, 5))
         font2 = QFont()
         font2.setFamily(u"Palatino Linotype")
-        font2.setPointSize(14)
+        font2.setPointSize(18)
         font2.setBold(True)
         font2.setItalic(False)
         font2.setWeight(75)
@@ -207,11 +205,11 @@ class MainWindow_UI(object):
 
         self.startSpinBox = QDoubleSpinBox(self.horizontalFrame_2)
         self.startSpinBox.setObjectName(u"startSpinBox")
-        font5 = QFont()
-        font5.setPointSize(10)
-        font5.setBold(True)
-        font5.setWeight(75)
-        self.startSpinBox.setFont(font5)
+        BoxesFont = QFont()
+        BoxesFont.setPointSize(10)
+        BoxesFont.setBold(True)
+        BoxesFont.setWeight(75)
+        self.startSpinBox.setFont(BoxesFont)
         self.startSpinBox.setProperty("showGroupSeparator", False)
         self.startSpinBox.setMinimum(-999999.989999999990687)
         self.startSpinBox.setMaximum(999999.989999999990687)
@@ -240,7 +238,7 @@ class MainWindow_UI(object):
 
         self.endSpinBox = QDoubleSpinBox(self.horizontalFrame_2)
         self.endSpinBox.setObjectName(u"endSpinBox")
-        self.endSpinBox.setFont(font5)
+        self.endSpinBox.setFont(BoxesFont)
         self.endSpinBox.setMinimum(-999999.989999999990687)
         self.endSpinBox.setMaximum(999999.989999999990687)
         self.endSpinBox.setValue(10.000000000000000)
@@ -268,7 +266,8 @@ class MainWindow_UI(object):
 
         self.pointSpinBox = QSpinBox(self.horizontalFrame_2)
         self.pointSpinBox.setObjectName(u"pointSpinBox")
-        self.pointSpinBox.setFont(font5)
+        self.pointSpinBox.setFont(BoxesFont)
+        self.pointSpinBox.setMinimum(2)
         self.pointSpinBox.setMaximum(999999999)
         self.pointSpinBox.setValue(10)
 
@@ -298,23 +297,23 @@ class MainWindow_UI(object):
         palette1.setBrush(QPalette.Active, QPalette.Base, brush6)
         brush16 = QBrush(QColor(255, 0, 0, 128))
         brush16.setStyle(Qt.NoBrush)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette1.setBrush(QPalette.Active, QPalette.PlaceholderText, brush16)
-# endif
+
         palette1.setBrush(QPalette.Inactive, QPalette.Text, brush15)
         palette1.setBrush(QPalette.Inactive, QPalette.Base, brush6)
         brush17 = QBrush(QColor(255, 0, 0, 128))
         brush17.setStyle(Qt.NoBrush)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette1.setBrush(QPalette.Inactive, QPalette.PlaceholderText, brush17)
-# endif
+
         palette1.setBrush(QPalette.Disabled, QPalette.Text, brush12)
         palette1.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         brush18 = QBrush(QColor(255, 0, 0, 128))
         brush18.setStyle(Qt.NoBrush)
-# if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+
         palette1.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush18)
-# endif
+
         self.errorText.setPalette(palette1)
         font6 = QFont()
         font6.setFamily(u"OCR A Extended")
@@ -360,33 +359,34 @@ class MainWindow_UI(object):
         self.drawButton.setDefault(False)
 
         QMetaObject.connectSlotsByName(MainWindow)
-    # setupUi
 
     def editUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate(
             "MainWindow", u"Function Plotter", None))
         self.actionAbout_2.setText(QCoreApplication.translate(
             "MainWindow", u"Repository link", None))
-# if QT_CONFIG(shortcut)
+
         self.actionAbout_2.setShortcut(
             QCoreApplication.translate("MainWindow", u"Alt+R", None))
-# endif // QT_CONFIG(shortcut)
-# if QT_CONFIG(accessibility)
+
+        self.drawButton.setToolTip(QCoreApplication.translate(
+            "MainWindow", u"Draw Enter", None))
+
         self.drawButton.setAccessibleName(
             QCoreApplication.translate("MainWindow", u"drawButton", None))
-# endif // QT_CONFIG(accessibility)
+
         self.drawButton.setText(
             QCoreApplication.translate("MainWindow", u"Draw", None))
-# if QT_CONFIG(shortcut)
-        self.drawButton.setShortcut(
-            QCoreApplication.translate("MainWindow", u"Ctrl+S", None))
-# endif // QT_CONFIG(shortcut)
+
+        self.drawButton.setShortcut(QCoreApplication.translate(
+            "MainWindow", u"Return", None))
+
         self.label.setText(QCoreApplication.translate(
             "MainWindow", u"Function Plotter", None))
-# if QT_CONFIG(accessibility)
+
         self.functionTextBox.setAccessibleName(
             QCoreApplication.translate("MainWindow", u"FunctionTextBox", None))
-# endif // QT_CONFIG(accessibility)
+
         self.functionTextBox.setText(
             QCoreApplication.translate("MainWindow", u"x^2", None))
         self.functionTextBox.setPlaceholderText("")
@@ -394,37 +394,35 @@ class MainWindow_UI(object):
             "MainWindow", u"y =", None))
         self.label_4.setText(QCoreApplication.translate(
             "MainWindow", u"Start", None))
-# if QT_CONFIG(accessibility)
+
         self.startSpinBox.setAccessibleName(
             QCoreApplication.translate("MainWindow", u"startSpinBox", None))
-# endif // QT_CONFIG(accessibility)
+
         self.label_5.setText(QCoreApplication.translate(
             "MainWindow", u"End", None))
-# if QT_CONFIG(accessibility)
+
         self.endSpinBox.setAccessibleName(
             QCoreApplication.translate("MainWindow", u"endSpinBox", None))
-# endif // QT_CONFIG(accessibility)
+
         self.label_7.setText(QCoreApplication.translate(
             "MainWindow", u"# of points", None))
-# if QT_CONFIG(accessibility)
+
         self.pointSpinBox.setAccessibleName(
             QCoreApplication.translate("MainWindow", u"pointSpinBox", None))
-# endif // QT_CONFIG(accessibility)
-# if QT_CONFIG(accessibility)
+
         self.errorText.setAccessibleName(
             QCoreApplication.translate("MainWindow", u"errorText", None))
-# endif // QT_CONFIG(accessibility)
+
         self.errorText.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
                                                           "p, li { white-space: pre-wrap; }\n"
                                                           "</style></head><body style=\" font-family:'OCR A Extended'; font-size:22pt; font-weight:400; font-style:normal;\">\n"
                                                           "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
-# if QT_CONFIG(accessibility)
+
         self.creationLabel.setAccessibleName(
             QCoreApplication.translate("MainWindow", u"fuctionLabel", None))
-# endif // QT_CONFIG(accessibility)
+
         self.creationLabel.setText(QCoreApplication.translate(
             "MainWindow", u"Created By Ahmed Saad", None))
         self.menuMenu.setTitle(QCoreApplication.translate(
             "MainWindow", u"About", None))
-    # retranslateUi
