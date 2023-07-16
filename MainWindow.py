@@ -47,7 +47,7 @@ class MainWindow(QMainWindow):
 
             self.plot.update_figure(x, y, text)
         except Exception as e:
-            self.ui.errorText.setText(str(e))
+            self.ui.setErrorText(str(e))
             pass
 
         # print(self.ui.GraphLayout.count())

@@ -158,6 +158,7 @@ class MainWindow_UI(object):
         self.functionTextBox = QLineEdit(self.frame)
         self.functionTextBox.setObjectName(u"functionTextBox")
         self.functionTextBox.setGeometry(QRect(80, 160, 401, 31))
+
         sizePolicy1 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
@@ -165,6 +166,8 @@ class MainWindow_UI(object):
             self.functionTextBox.sizePolicy().hasHeightForWidth())
         self.functionTextBox.setSizePolicy(sizePolicy1)
         self.functionTextBox.setSizeIncrement(QSize(6, 5))
+        self.functionTextBox.setStyleSheet(
+            "QLineEdit{border: 1px solid white; border-radius: 5px;}")
         font2 = QFont()
         font2.setFamily(u"Palatino Linotype")
         font2.setPointSize(18)
@@ -430,7 +433,7 @@ class MainWindow_UI(object):
         self.errorText.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
                                                           "p, li { white-space: pre-wrap; }\n"
-                                                          "</style></head><body style=\" font-family:'OCR A Extended'; font-size:22pt; font-weight:400; font-style:normal;\">\n"
+                                                          "</style></head><body style=\" font-family:'OCR A Extended'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
                                                           "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
 
         self.creationLabel.setAccessibleName(
@@ -440,3 +443,10 @@ class MainWindow_UI(object):
             "MainWindow", u"Created By Ahmed Saad", None))
         self.menuMenu.setTitle(QCoreApplication.translate(
             "MainWindow", u"About", None))
+
+    def setErrorText(self, Text):
+        self.errorText.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                          "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                          "p, li { white-space: pre-wrap; }\n"
+                                                          "</style></head><body style=\" font-family:'OCR A Extended'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
+                                                          "<center><p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />" + Text + "</p></center></body></html>", None))
