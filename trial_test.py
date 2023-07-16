@@ -1,8 +1,12 @@
+from MainWindow import MainWindow
 
 
-def asdssd(x):
-    return x+1
+def assdsa(x):
+    return x + 1
 
 
-def testrial():
-    return asdssd(1) == 2
+def test_trial():
+    window = MainWindow()
+    assert window is not None
+    assert window.is_float("1.2") == True
+    assert assdsa(3) == 4

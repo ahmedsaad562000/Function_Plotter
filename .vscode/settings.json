@@ -1,9 +1,11 @@
 {
     "python.pythonPath": "d:\\MM\\venv\\Scripts\\python.exe",
     "python.testing.pytestArgs": [
-        "test"
+        "."
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
-    "python.testing.autoTestDiscoverOnSaveEnabled": true,
+    "python.analysis.extraPaths": [
+        "./src"
+    ]
 }
