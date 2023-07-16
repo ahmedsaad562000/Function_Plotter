@@ -21,55 +21,51 @@ class MainWindow(QMainWindow):
         self.setWindowIconText("asd")
 
     def showPlot(self):
+
+        self.ui.errorText.setText("")
         text = self.ui.functionTextBox.text()
-        text2 = text.replace("^", "**")
-        x = np.linspace(self.ui.startSpinBox.value(),
-                        self.ui.endSpinBox.value(), self.ui.pointSpinBox.value())
         try:
+            text2 = text.replace("^", "**")
+            start = self.ui.startSpinBox.value()
+            end = self.ui.endSpinBox.value()
+            points = self.ui.pointSpinBox.value()
+            if start >= end:
+                raise Exception("Start value must be less than end value")
+            if points < 2:
+                raise Exception("Points must be greater than 1")
+
+            x = np.linspace(start,
+                            end, points)
 
             y = self.validateinput(text2)
-
-            print(y)
-            if (y == 0):
-                raise Exception("Invalid input")
-            elif (y == 1):
+            if y == 2:
                 y = eval(text2)
-            elif (y == 2):
-                y = [float(text2)]*len(x)
-        # remove nan elements from x and y
+            elif y == 1:
+                y = np.array([float(text2) for i in x])
             x, y = zip(*[(x[i], y[i])
                          for i in range(len(x)) if not np.isnan(y[i])])
-        # print(x)
-        # print(y)
 
             self.plot.update_figure(x, y, text)
         except Exception as e:
+            self.ui.errorText.setText(str(e))
             pass
 
         # print(self.ui.GraphLayout.count())
     def validateinput(self, str):
-        # safe parse string to number
         x = 1
-        try:
-            if (self.is_float(str)):
-                return 2
-            str = str.replace("^", "**")
-            eval(str)
-            return 1
-        except Exception as e:
+        if str == "":
+            raise Exception("Input Caan't be empty")
 
-            print(e)
-            return 0
+        elif self.is_float(str):
+            return 1
+
+        else:
+            eval(str)
+            return 2
 
     def is_float(self, element: any) -> bool:
-        # If you expect None to be passed:
-        if element is None:
-            print("here1")
-            return False
         try:
-            print("here2")
             float(element)
             return True
         except ValueError:
-            print("here5")
             return False

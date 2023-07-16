@@ -1,3 +1,5 @@
+from tkinter import Frame
+from turtle import shape
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
@@ -6,7 +8,7 @@ class PlotWidgetBaseClass(FigureCanvas):
     # Returns a QWidget containing the plot.
 
     def __init__(self, parent=None, width=10, height=10, dpi=100, xlabel='x', ylabel='Y', hold=False):
-        fig = Figure(figsize=(width, height), dpi=dpi)
+        fig = Figure(figsize=(width, height), dpi=dpi, frameon=False)
 
         self.axes = fig.add_subplot(111)
         self.axes.set_xlabel('x')

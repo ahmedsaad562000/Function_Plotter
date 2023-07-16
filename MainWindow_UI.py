@@ -148,10 +148,13 @@ class MainWindow_UI(object):
         self.label.setAlignment(Qt.AlignCenter)
         self.label.setWordWrap(False)
         self.frame = QFrame(self.centralwidget)
+
         self.frame.setObjectName(u"frame")
         self.frame.setGeometry(QRect(20, 110, 511, 241))
         self.frame.setFrameShape(QFrame.Panel)
         self.frame.setFrameShadow(QFrame.Plain)
+        self.frame.setStyleSheet(
+            ".QFrame{border: 1px solid white; border-radius: 10px;}")
         self.functionTextBox = QLineEdit(self.frame)
         self.functionTextBox.setObjectName(u"functionTextBox")
         self.functionTextBox.setGeometry(QRect(80, 160, 401, 31))
@@ -179,6 +182,8 @@ class MainWindow_UI(object):
         self.label_2.setObjectName(u"label_2")
         self.label_2.setEnabled(True)
         self.label_2.setGeometry(QRect(20, 140, 48, 78))
+        self.label_2.setStyleSheet(
+            ".QLabel{color: rgb(255, 255, 255);}")
         font3 = QFont()
         font3.setFamily(u"Myanmar Text")
         font3.setPointSize(20)
@@ -190,6 +195,8 @@ class MainWindow_UI(object):
         self.horizontalFrame_2.setObjectName(u"horizontalFrame_2")
         self.horizontalFrame_2.setGeometry(QRect(14, 30, 481, 83))
         self.horizontalFrame_2.setFrameShape(QFrame.Panel)
+        self.horizontalFrame_2.setStyleSheet(
+            ".QFrame{border: 1px solid white; border-radius: 10px;}")
         self.horizontalLayout_2 = QHBoxLayout(self.horizontalFrame_2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.verticalLayout = QVBoxLayout()
@@ -200,7 +207,8 @@ class MainWindow_UI(object):
         font4.setPointSize(14)
         self.label_4.setFont(font4)
         self.label_4.setAlignment(Qt.AlignCenter)
-
+        self.label_4.setStyleSheet(
+            ".QLabel{color: rgb(255, 255, 255);}")
         self.verticalLayout.addWidget(self.label_4)
 
         self.startSpinBox = QDoubleSpinBox(self.horizontalFrame_2)
@@ -233,6 +241,8 @@ class MainWindow_UI(object):
         self.label_5.setObjectName(u"label_5")
         self.label_5.setFont(font4)
         self.label_5.setAlignment(Qt.AlignCenter)
+        self.label_5.setStyleSheet(
+            ".QLabel{color: rgb(255, 255, 255);}")
 
         self.verticalLayout_2.addWidget(self.label_5)
 
@@ -261,6 +271,8 @@ class MainWindow_UI(object):
         self.label_7.setObjectName(u"label_7")
         self.label_7.setFont(font4)
         self.label_7.setAlignment(Qt.AlignCenter)
+        self.label_7.setStyleSheet(
+            ".QLabel{color: rgb(255, 255, 255);}")
 
         self.verticalLayout_4.addWidget(self.label_7)
 
@@ -268,7 +280,7 @@ class MainWindow_UI(object):
         self.pointSpinBox.setObjectName(u"pointSpinBox")
         self.pointSpinBox.setFont(BoxesFont)
         self.pointSpinBox.setMinimum(2)
-        self.pointSpinBox.setMaximum(999999999)
+        self.pointSpinBox.setMaximum(99999)
         self.pointSpinBox.setValue(10)
 
         self.verticalLayout_4.addWidget(self.pointSpinBox)
@@ -276,6 +288,8 @@ class MainWindow_UI(object):
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
 
         self.frame_3 = QFrame(self.centralwidget)
+        self.frame_3.setStyleSheet(
+            ".QFrame{border: 12px solid white; border-radius: 10px;}")
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setGeometry(QRect(540, 110, 651, 461))
         self.frame_3.setFrameShape(QFrame.Panel)
