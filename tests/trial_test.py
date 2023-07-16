@@ -1,4 +1,4 @@
-from MainWindow import MainWindow
+from .src.MainWindow import MainWindow
 
 
 def assdsa(x):
