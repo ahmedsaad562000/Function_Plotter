@@ -157,7 +157,7 @@ class MainWindow_UI(object):
             ".QFrame{border: 1px solid white; border-radius: 10px;}")
         self.functionTextBox = QLineEdit(self.frame)
         self.functionTextBox.setObjectName(u"functionTextBox")
-        self.functionTextBox.setGeometry(QRect(80, 160, 401, 31))
+        self.functionTextBox.setGeometry(QRect(80, 160, 401, 40))
 
         sizePolicy1 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
         sizePolicy1.setHorizontalStretch(0)
@@ -170,7 +170,7 @@ class MainWindow_UI(object):
             "QLineEdit{border: 1px solid white; border-radius: 5px;}")
         font2 = QFont()
         font2.setFamily(u"Palatino Linotype")
-        font2.setPointSize(18)
+        font2.setPointSize(16)
         font2.setBold(True)
         font2.setItalic(False)
         font2.setWeight(75)
@@ -449,4 +449,4 @@ class MainWindow_UI(object):
                                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
                                                           "p, li { white-space: pre-wrap; }\n"
                                                           "</style></head><body style=\" font-family:'OCR A Extended'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
-                                                          "<center><p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />" + Text + "</p></center></body></html>", None))
+                                                          "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />" + Text + "</p></body></html>", None))
