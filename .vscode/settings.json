@@ -1,5 +1,4 @@
 {
-    "python.pythonPath": "d:\\MM\\venv\\Scripts\\python.exe",
     "python.testing.pytestArgs": [
         "."
     ],
@@ -7,5 +6,6 @@
     "python.testing.pytestEnabled": true,
     "python.analysis.extraPaths": [
         "./src"
-    ]
+    ],
+    "editor.formatOnSave": false
 }

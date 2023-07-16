@@ -1,20 +1,20 @@
 
 
-import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from pathlib import Path
 
+sys.path.insert(
+    1, str(Path(__file__).resolve().parent.parent) + "\src")
+
+from src.MainWindow import MainWindow
 
 def assdsa(x):
-    print(os.path.abspath(__file__))
+    print(str(Path(__file__).resolve().parent.parent) + "\src\MainWindow.py")
     return x + 1
 
 
 def test_trial():
-    # window = MainWindow()
-    # assert window is not None
-    # assert window.is_float("1.2") == True
+    window = MainWindow()
+    assert window is not None
+    assert window.is_float("1.2") == True
     assert assdsa(3) == 4
-
-
-test_trial()
