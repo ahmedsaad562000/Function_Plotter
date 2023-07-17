@@ -1,14 +1,16 @@
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
-
+from PySide2.QtCore import QSize, Qt, QMetaObject, QCoreApplication, QRect
+from PySide2.QtGui import QBrush, QColor, QFont, QPalette, QIcon, QCursor
+from PySide2.QtWidgets import QFrame, QLabel, QLineEdit, QPushButton, QSizePolicy, QSpinBox, QStatusBar, QWidget, QAction,QHBoxLayout,QVBoxLayout,QMenu,QMenuBar,QDoubleSpinBox,QTextBrowser,QLayout
 class MainWindow_UI(object):
     def setupUi(self, MainWindow):
+        ############################################################################33
+        # Set the main window object name
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.ApplicationModal)
         MainWindow.resize(1216, 663)
+        ############################################################################33
+        # Set the main window size policy to fixed
         sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -17,6 +19,8 @@ class MainWindow_UI(object):
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QSize(1216, 663))
         MainWindow.setMaximumSize(QSize(5000, 5000))
+        ############################################################################33
+        #  Set the main window color palette
         palette = QPalette()
         brush = QBrush(QColor(255, 255, 255, 255))
         brush.setStyle(Qt.SolidPattern)
@@ -105,10 +109,10 @@ class MainWindow_UI(object):
         palette.setBrush(QPalette.Disabled, QPalette.AlternateBase, brush1)
         palette.setBrush(QPalette.Disabled, QPalette.ToolTipBase, brush9)
         palette.setBrush(QPalette.Disabled, QPalette.ToolTipText, brush4)
-
         palette.setBrush(QPalette.Disabled, QPalette.PlaceholderText, brush13)
-
         MainWindow.setPalette(palette)
+        ############################################################################
+        #Set the menu bar
         MainWindow.setAcceptDrops(False)
         MainWindow.setAnimated(True)
         MainWindow.setDocumentMode(False)
@@ -118,7 +122,11 @@ class MainWindow_UI(object):
         icon.addFile(u":/i18n/pro1_en_GB.qm", QSize(), QIcon.Normal, QIcon.Off)
         self.actionAbout_2.setIcon(icon)
         self.centralwidget = QWidget(MainWindow)
+        ############################################################################
+        #Set the central widget
         self.centralwidget.setObjectName(u"centralwidget")
+        ############################################################################
+        # Set the draw button and its properties
         self.drawButton = QPushButton(self.centralwidget)
         self.drawButton.setObjectName(u"drawButton")
         self.drawButton.setGeometry(QRect(220, 380, 121, 51))
@@ -132,33 +140,38 @@ class MainWindow_UI(object):
         self.drawButton.setCheckable(False)
         self.drawButton.setAutoExclusive(False)
         self.drawButton.setAutoDefault(False)
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(120, 20, 801, 81))
+        ############################################################################
+        # set the main label (Function Plotter) and its properties
+        self.mainLabel = QLabel(self.centralwidget)
+        self.mainLabel.setObjectName(u"label")
+        self.mainLabel.setGeometry(QRect(120, 20, 801, 81))
+        
         font1 = QFont()
         font1.setFamily(u"Myanmar Text")
         font1.setPointSize(36)
         font1.setBold(True)
         font1.setWeight(75)
-        self.label.setFont(font1)
-        self.label.setLayoutDirection(Qt.LeftToRight)
-        self.label.setFrameShape(QFrame.NoFrame)
-        self.label.setFrameShadow(QFrame.Plain)
-        self.label.setTextFormat(Qt.RichText)
-        self.label.setAlignment(Qt.AlignCenter)
-        self.label.setWordWrap(False)
+        self.mainLabel.setFont(font1)
+        self.mainLabel.setLayoutDirection(Qt.LeftToRight)
+        self.mainLabel.setFrameShape(QFrame.NoFrame)
+        self.mainLabel.setFrameShadow(QFrame.Plain)
+        self.mainLabel.setTextFormat(Qt.RichText)
+        self.mainLabel.setAlignment(Qt.AlignCenter)
+        self.mainLabel.setWordWrap(False)
+        ############################################################################
+        # set the input outer frame and its properties
         self.frame = QFrame(self.centralwidget)
-
         self.frame.setObjectName(u"frame")
         self.frame.setGeometry(QRect(20, 110, 511, 241))
         self.frame.setFrameShape(QFrame.Panel)
         self.frame.setFrameShadow(QFrame.Plain)
         self.frame.setStyleSheet(
             ".QFrame{border: 1px solid white; border-radius: 10px;}")
+        ############################################################################
+        # Set the Function Text Box and its properties
         self.functionTextBox = QLineEdit(self.frame)
         self.functionTextBox.setObjectName(u"functionTextBox")
         self.functionTextBox.setGeometry(QRect(80, 160, 401, 40))
-
         sizePolicy1 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Ignored)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
@@ -181,12 +194,15 @@ class MainWindow_UI(object):
         self.functionTextBox.setFrame(True)
         self.functionTextBox.setCursorMoveStyle(Qt.VisualMoveStyle)
         self.functionTextBox.setClearButtonEnabled(True)
+        ############################################################################
+        # Set the Y-label (y =) and its properties 
         self.label_2 = QLabel(self.frame)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setEnabled(True)
         self.label_2.setGeometry(QRect(20, 140, 48, 78))
         self.label_2.setStyleSheet(
             ".QLabel{color: rgb(255, 255, 255);}")
+        
         font3 = QFont()
         font3.setFamily(u"Myanmar Text")
         font3.setPointSize(20)
@@ -194,6 +210,8 @@ class MainWindow_UI(object):
         font3.setWeight(75)
         self.label_2.setFont(font3)
         self.label_2.setMouseTracking(False)
+        ############################################################################
+        # Set the input inner frame and its properties
         self.horizontalFrame_2 = QFrame(self.frame)
         self.horizontalFrame_2.setObjectName(u"horizontalFrame_2")
         self.horizontalFrame_2.setGeometry(QRect(14, 30, 481, 83))
@@ -202,6 +220,8 @@ class MainWindow_UI(object):
             ".QFrame{border: 1px solid white; border-radius: 10px;}")
         self.horizontalLayout_2 = QHBoxLayout(self.horizontalFrame_2)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        ############################################################################
+        # Set the start spin Box and its properties and add it to the input inner frame
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label_4 = QLabel(self.horizontalFrame_2)
@@ -248,7 +268,8 @@ class MainWindow_UI(object):
             ".QLabel{color: rgb(255, 255, 255);}")
 
         self.verticalLayout_2.addWidget(self.label_5)
-
+        ############################################################################
+        # Set the end spin Box and its properties and add it to the input inner frame
         self.endSpinBox = QDoubleSpinBox(self.horizontalFrame_2)
         self.endSpinBox.setObjectName(u"endSpinBox")
         self.endSpinBox.setFont(BoxesFont)
@@ -278,7 +299,8 @@ class MainWindow_UI(object):
             ".QLabel{color: rgb(255, 255, 255);}")
 
         self.verticalLayout_4.addWidget(self.label_7)
-
+        ############################################################################
+        # Set the Number of points spin Box and its properties and add it to the input inner frame
         self.pointSpinBox = QSpinBox(self.horizontalFrame_2)
         self.pointSpinBox.setObjectName(u"pointSpinBox")
         self.pointSpinBox.setFont(BoxesFont)
@@ -289,7 +311,8 @@ class MainWindow_UI(object):
         self.verticalLayout_4.addWidget(self.pointSpinBox)
 
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
-
+        ############################################################################
+        # Set the Frame that will contain the graph and its properties
         self.frame_3 = QFrame(self.centralwidget)
         self.frame_3.setStyleSheet(
             ".QFrame{border: 12px solid white; border-radius: 10px;}")
@@ -300,10 +323,15 @@ class MainWindow_UI(object):
         self.verticalLayoutWidget_2 = QWidget(self.frame_3)
         self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
         self.verticalLayoutWidget_2.setGeometry(QRect(10, 10, 631, 441))
+        ############################################################################
+        # Set the layout of the graph frame
         self.GraphLayout = QVBoxLayout(self.verticalLayoutWidget_2)
         self.GraphLayout.setObjectName(u"GraphLayout")
         self.GraphLayout.setSizeConstraint(QLayout.SetFixedSize)
         self.GraphLayout.setContentsMargins(0, 0, 0, 0)
+        ############################################################################
+        # Set the error text viewer and its properties
+        # The error text viewer is a read only text viewer that will show the errors
         self.errorText = QTextBrowser(self.centralwidget)
         self.errorText.setObjectName(u"errorText")
         self.errorText.setGeometry(QRect(40, 440, 491, 171))
@@ -339,6 +367,8 @@ class MainWindow_UI(object):
         font6.setWeight(50)
         self.errorText.setFont(font6)
         self.errorText.setFrameShape(QFrame.NoFrame)
+        ############################################################################
+        # Set the creation label (Created By Ahmed Saad) and its properties
         self.creationLabel = QLabel(self.centralwidget)
         self.creationLabel.setObjectName(u"creationLabel")
         self.creationLabel.setGeometry(QRect(640, 580, 489, 31))
@@ -357,6 +387,8 @@ class MainWindow_UI(object):
         self.creationLabel.setFrameShape(QFrame.NoFrame)
         self.creationLabel.setFrameShadow(QFrame.Plain)
         self.creationLabel.setAlignment(Qt.AlignCenter)
+        ############################################################################
+        # Set the menu bar and its properties
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -370,14 +402,14 @@ class MainWindow_UI(object):
 
         self.menubar.addAction(self.menuMenu.menuAction())
         self.menuMenu.addAction(self.actionAbout_2)
-
-        self.editUi(MainWindow)
-
+        ############################################################################
+        self.AddText(MainWindow)
         self.drawButton.setDefault(False)
-
         QMetaObject.connectSlotsByName(MainWindow)
 
-    def editUi(self, MainWindow):
+    # this function is used to edit the ui of the main window
+    # Mainly by setting the text of the labels, buttons and tool tips 
+    def AddText(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate(
             "MainWindow", u"Function Plotter", None))
         self.actionAbout_2.setText(QCoreApplication.translate(
@@ -398,7 +430,7 @@ class MainWindow_UI(object):
         self.drawButton.setShortcut(QCoreApplication.translate(
             "MainWindow", u"Return", None))
 
-        self.label.setText(QCoreApplication.translate(
+        self.mainLabel.setText(QCoreApplication.translate(
             "MainWindow", u"Function Plotter", None))
 
         self.functionTextBox.setAccessibleName(
@@ -444,6 +476,10 @@ class MainWindow_UI(object):
         self.menuMenu.setTitle(QCoreApplication.translate(
             "MainWindow", u"About", None))
 
+    # this function is used to set the error text
+    # it takes the error text as a parameter
+    # and sets the error text with specific html tags
+    # to make it look better in the gui
     def setErrorText(self, Text):
         self.errorText.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
                                                           "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
