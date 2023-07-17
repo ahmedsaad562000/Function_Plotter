@@ -17,6 +17,7 @@ class MainWindow(QMainWindow):
         self.ui.GraphLayout.addWidget(self.plot)
         self.ui.drawButton.clicked.connect(self.showPlot)
         self.ui.actionAbout_2.triggered.connect(openRepoLink)
+        
 
     def setIcon(self, path):
         self.setWindowIcon(QtGui.QIcon(path))
@@ -25,7 +26,7 @@ class MainWindow(QMainWindow):
 
 
     def showPlot(self):
-
+        
         self.ui.errorText.setText("")
         text = self.ui.functionTextBox.text()
         text = text.replace(" ", "")

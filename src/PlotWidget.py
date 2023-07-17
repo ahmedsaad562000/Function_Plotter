@@ -31,8 +31,8 @@ class PlotWidget(PlotWidgetBaseClass):
 
     def compute_initial_figure(self):
         # initial plot (y=x) from -10 to 10
-        points = [i for i in range(-10, 11)]
-        self.axes.set_title('Y = $x^2 + 5$', {'fontsize': 18,
+        points = [i for i in range(-10, 11,2)]
+        self.axes.set_title('Y = $x$', {'fontsize': 18,
                                               'color': 'b'})
         self.axes.plot(points, points, 'r')
 
