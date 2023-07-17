@@ -3,7 +3,7 @@ import pytest
 import sys
 sys.path.append('.')
 from src import MainWindow
-from PySide2 import QtCore, QtWidgets , QtGui
+from PySide2 import QtCore, QtGui
 
 
 
