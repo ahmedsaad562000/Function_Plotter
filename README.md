@@ -18,18 +18,18 @@ Function Plotter is a Python GUI program that plots an arbitrary user-entered fu
 - ### Errors
   - Empty Text Box
   - 
-    <img src="screenshots/Empty_input_error.png" alt= “Error1_Image” height=500 width=300> 
+    <img src="screenshots/Empty_input_error.png" alt= “Error1_Image” height=400 width=300> 
   - Allowed Characters
   - 
-    <img src="screenshots/Allowed_Characters_Error.png" alt= “Error2_Image” height=500 width=300>
+    <img src="screenshots/Allowed_Characters_Error.png" alt= “Error2_Image” height=400 width=300>
     <img src="screenshots/Allowed_Characters_Error2.png" alt= “Error3_Image” height=200 width=300>   
   - Paranthesis Error
   - 
-    <img src="screenshots/paranthesis_error.png" alt= “Error4_Image” height=500 width=300>
+    <img src="screenshots/paranthesis_error.png" alt= “Error4_Image” height=400 width=300>
   
   - Wrong Function
   - 
-    <img src="screenshots/function_structure.png" alt= “Error5_Image” height=500 width=300>
+    <img src="screenshots/function_structure.png" alt= “Error5_Image” height=400 width=300>
 
 - ### Testing (31 total tests)
     <img src="screenshots/QT-Tests.png" alt= “PyTest-Qt_Image” height=400 width=300>
