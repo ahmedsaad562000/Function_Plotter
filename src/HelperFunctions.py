@@ -1,6 +1,5 @@
 import re
 import webbrowser
-import numpy as np
 
 # Used to validate the input
 # It returns 1 if the input is a number

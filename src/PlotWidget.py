@@ -1,5 +1,3 @@
-from tkinter import Frame
-from turtle import shape
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
