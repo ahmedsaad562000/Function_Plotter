@@ -9,7 +9,7 @@ def test_window_color(app):
 
 # test the initial function text box value
 def test_function_initial_value(app):
-    assert app.ui.functionTextBox.text() == "x^2"
+    assert app.ui.functionTextBox.text() == "x"
 
 # test the initial start spin box value
 def test_start_spin_box_value(app):

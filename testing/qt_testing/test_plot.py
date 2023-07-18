@@ -7,7 +7,7 @@ def test_plot_label(app):
 # test the plot label after clicking the draw button
 def test_plot_label_after_click(app, qtbot):
     qtbot.mouseClick(app.ui.drawButton, QtCore.Qt.LeftButton)
-    assert app.plot.axes.get_title() == "Y = $x^2$"
+    assert app.plot.axes.get_title() == "Y = $x$"
 
 # test the plot label after clicking the draw button
 # and changing the function

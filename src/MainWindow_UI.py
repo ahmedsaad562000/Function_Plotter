@@ -437,7 +437,7 @@ class MainWindow_UI(object):
             QCoreApplication.translate("MainWindow", u"FunctionTextBox", None))
 
         self.functionTextBox.setText(
-            QCoreApplication.translate("MainWindow", u"x^2", None))
+            QCoreApplication.translate("MainWindow", u"x", None))
         self.functionTextBox.setPlaceholderText("")
         self.label_2.setText(QCoreApplication.translate(
             "MainWindow", u"y =", None))
