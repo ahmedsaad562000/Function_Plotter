@@ -1,5 +1,5 @@
 
-<h1><span style="color:blue">Master_Micro_Function_Plotter</span></h1>
+<h1><span style="color:blue">Function_Plotter</span></h1>
 <img src="assets\images\icon.jpg" alt= “Icon_Image” width="100" height="100">
 
 
